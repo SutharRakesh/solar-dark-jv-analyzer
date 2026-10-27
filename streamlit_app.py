@@ -137,6 +137,8 @@ def sci(val):
 st.title("🔬 Solar-cell Dark J–V Analyzer")
 st.caption("Upload or paste dark J–V data · Select physical regions · Fit a single- or two-diode model · Download Origin data and parameters")
 
+st.title("🔬 Solar-cell Dark J–V Analyzer")
+st.caption("Upload or paste dark J–V data · Select physical regions · Fit a single- or two-diode model · Download Origin data and parameters")
 left, middle, right = st.columns([1.20, 1.55, 3.30], gap="medium")
 
 with left:
