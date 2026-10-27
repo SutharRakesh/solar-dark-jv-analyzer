@@ -137,8 +137,48 @@ def sci(val):
 st.title("🔬 Solar-cell Dark J–V Analyzer")
 st.caption("Upload or paste dark J–V data · Select physical regions · Fit a single- or two-diode model · Download Origin data and parameters")
 
-st.title("🔬 Solar-cell Dark J–V Analyzer")
-st.caption("Upload or paste dark J–V data · Select physical regions · Fit a single- or two-diode model · Download Origin data and parameters")
+# ==========================================
+# SCIENTIFIC FITTING GUIDE
+# ==========================================
+
+guide_path = (
+    Path(__file__).parent
+    / "docs"
+    / "Solar_Dark_JV_Quick_Guide.pdf"
+)
+
+if guide_path.exists():
+
+    st.markdown("#### 📘 Scientific Fitting Guide")
+
+    st.caption(
+        "Read the practical guide to fitting regions, "
+        "diode models, numerical parameter limits, "
+        "and interpretation of fitting results."
+    )
+
+    guide_col1, guide_col2 = st.columns(2)
+
+    with guide_col1:
+        st.link_button(
+            "📖 Read Scientific Guide",
+            "https://github.com/SutharRakesh/"
+            "solar-dark-jv-analyzer/blob/main/"
+            "docs/Solar_Dark_JV_Quick_Guide.pdf",
+            use_container_width=True
+        )
+
+    with guide_col2:
+        st.download_button(
+            "📥 Download Scientific Guide (PDF)",
+            data=guide_path.read_bytes(),
+            file_name="Solar_Dark_JV_Quick_Guide.pdf",
+            mime="application/pdf",
+            use_container_width=True
+        )
+
+    st.divider()
+
 left, middle, right = st.columns([1.20, 1.55, 3.30], gap="medium")
 
 with left:
